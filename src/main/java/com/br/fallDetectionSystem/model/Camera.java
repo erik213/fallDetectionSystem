@@ -1,60 +1,35 @@
 package com.br.fallDetectionSystem.model;
 
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
 @Entity
+@Table(name="camera")
 public class Camera {
 
 	@Id
-	private int cod_camera;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id_camera")
+	private Integer id_camera;
 	
-	private int cod_paciente;
+	@Column(name="id_paciente")
+	private Integer id_paciente;
 	
+	@Column(name="localizacao_camera")
 	private String localizacao_camera;
 	
-	private int online;
+	@Column(name="online_status")
+	private Boolean online_status;
 	
+	@Column(name="last_online_status")
 	private Date last_online_status;
-
-	public int getCod_camera() {
-		return cod_camera;
-	}
-
-	public void setCod_camera(int cod_camera) {
-		this.cod_camera = cod_camera;
-	}
-
-	public int getCod_paciente() {
-		return cod_paciente;
-	}
-
-	public void setCod_paciente(int cod_paciente) {
-		this.cod_paciente = cod_paciente;
-	}
-
-	public String getLocalizacao_camera() {
-		return localizacao_camera;
-	}
-
-	public void setLocalizacao_camera(String localizacao_camera) {
-		this.localizacao_camera = localizacao_camera;
-	}
-
-	public int getOnline() {
-		return online;
-	}
-
-	public void setOnline(int online) {
-		this.online = online;
-	}
-
-	public Date getLast_online_status() {
-		return last_online_status;
-	}
-
-	public void setLast_online_status(Date last_online_status) {
-		this.last_online_status = last_online_status;
-	}
 }

@@ -7,13 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.br.fallDetectionSystem.model.Paciente;
-import com.br.fallDetectionSystem.model.PacienteCuidador;
 import com.br.fallDetectionSystem.model.PacienteCuidadorId;
-import com.br.fallDetectionSystem.repository.PacienteCuidadorRepository;
 import com.br.fallDetectionSystem.repository.PacienteRepository;
 import com.br.fallDetectionSystem.service.PacienteCuidadorService;
 
@@ -22,9 +19,6 @@ public class PatientAssociationController {
 
 	@Autowired
 	private PacienteCuidadorService pacienteCuidadorService;
-	
-	@Autowired
-	private PacienteCuidadorRepository pacienteCuidadorRepository;
 	
 	@Autowired
 	private PacienteRepository pacienteRepository;
