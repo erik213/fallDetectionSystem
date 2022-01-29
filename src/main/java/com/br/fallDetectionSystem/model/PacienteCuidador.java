@@ -1,25 +1,29 @@
 package com.br.fallDetectionSystem.model;
 
+import java.io.Serializable;
+
+//import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+//import javax.persistence.Id;
+import javax.persistence.Table;
 
+import lombok.Data;
+
+@SuppressWarnings("serial")
+@Data
 @Entity
-public class PacienteCuidador {
-
-	@Id
-	private int cod_paciente;
-	private int cod_cuidador;
+@Table(name="paciente_cuidador")
+public class PacienteCuidador implements Serializable{
 	
-	public int getCod_paciente() {
-		return cod_paciente;
+	@EmbeddedId
+	private PacienteCuidadorId pacienteCuidadorId;
+	
+	public PacienteCuidador() {
+		
 	}
-	public void setCod_paciente(int cod_paciente) {
-		this.cod_paciente = cod_paciente;
-	}
-	public int getCod_cuidador() {
-		return cod_cuidador;
-	}
-	public void setCod_cuidador(int cod_cuidador) {
-		this.cod_cuidador = cod_cuidador;
-	}
+	
+	public PacienteCuidador(PacienteCuidadorId pacienteCuidadorId) {
+        this.pacienteCuidadorId = pacienteCuidadorId;
+    }
 }
