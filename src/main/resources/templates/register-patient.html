@@ -18,41 +18,42 @@
 		                  th:object="${paciente}" method="post" class="form-horizontal"
 		                  role="form">
 		                <h2>Cadastrar paciente</h2>
+		                
+		                <p>Nome<p>
 		                <div class="form-group">
 		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{nome}" placeholder="Nome"
-		                               class="form-control"/>
+		                        <input type="text" th:field="*{nome}" class="form-control"/>
 		                    </div>
 		                </div>
 		                
+		                <p>Aniversário<p>
 		                <div class="form-group">
 		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{aniversario}" placeholder="Aniversário"
-		                               class="form-control"/>
+		                        <input type="text" th:field="*{aniversario}" class="form-control"/>
 		                    </div>
 		                </div>
 		                
+		                <p>Gênero<p>
 		                <div class="form-group">
 		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{genero}" placeholder="Gênero"
-		                               class="form-control"/>
+		                        <input type="text" th:field="*{genero}" class="form-control"/>
 		                    </div>
 		                </div>
 		                
+		                <p>Endereço<p>
 		                <div class="form-group">
 		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{endereco}" placeholder="Endereço"
-		                               class="form-control"/> 
+		                        <input type="text" th:field="*{endereco}" class="form-control"/> 
 		                    </div>
 		                </div>
 		                
+		                <p>Telefone<p>
 		                <div class="form-group">
 		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{telefone}" placeholder="Telefone"
-		                               class="form-control"/> 
+		                        <input type="text" th:field="*{telefone}" class="form-control"/> 
 		                    </div>
 		                </div>
-		
+						
 		                <div class="form-group">
 		                    <div class="col-sm-9">
 		                        <button type="submit" class="btn btn-primary btn-block">Cadastrar paciente</button>

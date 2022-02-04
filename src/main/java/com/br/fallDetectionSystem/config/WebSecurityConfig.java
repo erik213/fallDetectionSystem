@@ -16,8 +16,29 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  
-    @Autowired
-    private DataSource dataSource;
+	
+	  @Autowired private DataSource dataSource;
+	 
+	
+	/*
+	 * @Bean public DataSource dataSource() { EmbeddedDatabaseBuilder builder = new
+	 * EmbeddedDatabaseBuilder(); return
+	 * builder.setType(EmbeddedDatabaseType.HSQL).build(); }
+	 * 
+	 * @Bean public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+	 * HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+	 * vendorAdapter.setGenerateDdl(true); LocalContainerEntityManagerFactoryBean
+	 * factory = new LocalContainerEntityManagerFactoryBean();
+	 * factory.setJpaVendorAdapter(vendorAdapter);
+	 * factory.setPackagesToScan("com.br.fallDetectionSystem");
+	 * factory.setDataSource(dataSource()); return factory; }
+	 * 
+	 * @Bean public PlatformTransactionManager
+	 * transactionManager(EntityManagerFactory entityManagerFactory) {
+	 * JpaTransactionManager txManager = new JpaTransactionManager();
+	 * txManager.setEntityManagerFactory(entityManagerFactory); return txManager; }
+	 */
+	  
      
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {

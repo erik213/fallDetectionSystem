@@ -15,15 +15,24 @@
 		    <div class="row">
 		        <div class="col-md-6 col-md-offset-3">
 		            <form autocomplete="off" action="#" th:action="@{/associate-patient}"
-		                  th:object="${pacienteCuidadorId}" method="post" class="form-horizontal" role="form">
+		                  th:object="${pacienteCuidador}" method="post" class="form-horizontal" role="form">
 		                <h2>Associar a paciente</h2>
+		                
+		                <p>Identificador do paciente<p>
 		                <div class="form-group">
 		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{id_paciente}" placeholder="Identificador do paciente"
-		                               class="form-control"/>
+		                        <input type="text" th:field="*{id_paciente}" class="form-control"/>
+		                    </div>
+		                </div>
+		                
+		                <p>Identificador do cuidador<p>
+		                <div class="form-group">
+		                    <div class="col-sm-9">
+		                        <input type="text" th:value="${id_cuidador}" class="form-control" readonly/>
 		                    </div>
 		                </div>
 		
+		                
 		                <div class="form-group">
 		                    <div class="col-sm-9">
 		                        <button type="submit" class="btn btn-primary btn-block">Associar</button>
@@ -31,6 +40,7 @@
 		                </div>
 		
 		                <h2><span class="text-success" th:utext="${successMessage}"></span></h2>
+		                <h2><span class="text-warning" th:utext="${warningMessage}"></span></h2>
 		
 		            </form>
 		            

@@ -21,7 +21,7 @@ public class Paciente {
 	@Column(name = "id_paciente")
 	private int id_paciente;
 	
-	@Column(name = "nome")
+	@Column(name = "nome_paciente")
 	private String nome;
 	
 	@Column(name = "aniversario")

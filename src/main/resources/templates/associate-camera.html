@@ -18,17 +18,17 @@
 		                  th:object="${camera}" method="post" class="form-horizontal" role="form">
 		                <h2>Cadastrar câmera</h2>
 		                
+		                 <p>Identificador do paciente<p>
 		                 <div class="form-group">
 		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{id_paciente}" placeholder="Identificador do paciente"
-		                               class="form-control" required/>
+		                        <input type="text" th:field="*{id_paciente}" class="form-control" required/>
 		                    </div>
 		                </div>
 		                
+		                <p>Localização da câmera<p>
 		                <div class="form-group">
 		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{localizacao_camera}" placeholder="Localização da câmera"
-		                               class="form-control" required/>
+		                        <input type="text" th:field="*{localizacao_camera}" class="form-control" required/>
 		                    </div>
 		                </div>
 		                

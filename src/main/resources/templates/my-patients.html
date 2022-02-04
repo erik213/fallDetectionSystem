@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" 
+  	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	<head>
+		<meta charset="UTF-8">
+		<title>Fall Detection System</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<table>
+	    	<thead>
+				<tr>
+			    	<th> Id Paciente &nbsp</th>
+			        <th> Nome Paciente </th>
+			    </tr>
+			</thead>
+			<tbody>
+				<tr th:if="${pacienteCuidador.empty}">
+			    	<td colspan="2"> Nenhum paciente cadastrado </td>
+			    </tr>
+			    <tr th:each="paciente : ${pacienteCuidador}">
+			    	<td><span th:text="${paciente.id_paciente}"> id_paciente </span></td>
+			    </tr>
+			</tbody>
+		</table>
+	</body>
+</html>

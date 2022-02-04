@@ -20,57 +20,52 @@
                   th:object="${cuidador}" method="post" class="form-horizontal"
                   role="form">
                 <h2>Registre-se</h2>
+                
+                <p>Nome completo<p>
                 <div class="form-group">
                     <div class="col-sm-9">
-                        <input type="text" th:field="*{name}" placeholder="Nome completo"
-                               class="form-control"/>
-                        <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
-                               class="validation-message"></label>
+                        <input type="text" th:field="*{nome}" class="form-control"/>
+                        <label th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="validation-message"></label>
                     </div>
                 </div>
 
+				<p>Email<p>
                 <div class="form-group">
                     <div class="col-sm-9">
-                        <input type="text" th:field="*{email}" placeholder="Email"
-                               class="form-control"/> 
-                        <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
-                               class="validation-message"></label>
+                        <input type="text" th:field="*{email}" class="form-control"/> 
+                        <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="validation-message"></label>
                     </div>
                 </div>
                 
+                <p>Telefone<p>
                 <div class="form-group">
                     <div class="col-sm-9">
-                        <input type="text" th:field="*{telefone}" placeholder="Telefone"
-                               class="form-control"/> 
-                        <label th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}"
-                               class="validation-message"></label>
+                        <input type="text" th:field="*{telefone}" class="form-control"/> 
+                        <label th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}" class="validation-message"></label>
                     </div>
                 </div>
                 
+                <p>Endereço<p>
                 <div class="form-group">
                     <div class="col-sm-9">
-                        <input type="text" th:field="*{endereco}" placeholder="Endereço"
-                               class="form-control"/> 
-                        <label th:if="${#fields.hasErrors('endereco')}" th:errors="*{endereco}"
-                               class="validation-message"></label>
+                        <input type="text" th:field="*{endereco}" class="form-control"/> 
+                        <label th:if="${#fields.hasErrors('endereco')}" th:errors="*{endereco}" class="validation-message"></label>
                     </div>
                 </div>
                 
+                <p>Username<p>
                 <div class="form-group">
                     <div class="col-sm-9">
-                        <input type="text" th:field="*{username}" placeholder="Username"
-                               class="form-control"/> 
-                        <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
-                               class="validation-message"></label>
+                        <input type="text" th:field="*{username}" class="form-control"/> 
+                        <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="validation-message"></label>
                     </div>
                 </div>
                 
+                <p>Senha<p>
                 <div class="form-group">
                     <div class="col-sm-9">
-                        <input type="password" th:field="*{password}"
-                               placeholder="Password" class="form-control"/> 
-                        <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
-                               class="validation-message"></label>
+                        <input type="password" th:field="*{password}" class="form-control"/> 
+                        <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="validation-message"></label>
                     </div>
                 </div>
 

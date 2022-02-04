@@ -28,8 +28,8 @@ public class Cuidador {
 	
 	@NotEmpty(message = "Nome completo não pode estar vazio.")
 	@Size(min = 5, max = 255)
-	@Column(name="name")
-	private String name;
+	@Column(name="nome_cuidador")
+	private String nome;
 	
 	@NotEmpty(message = "Email não pode estar vazio.")
 	@Column(name="email")

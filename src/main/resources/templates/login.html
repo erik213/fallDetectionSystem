@@ -18,13 +18,14 @@
 	        <h3 class="form-signin-heading" th:text="Welcome"></h3>
 	        <br/>
 	
-	        <input type="text" id="username" name="username" placeholder="Username"
-	               class="form-control"/> <br/>
-	        <input type="password" th:placeholder="Senha"
-	               id="password" name="password" class="form-control"/> <br/>
+			<p>Username<p>
+	        <input type="text" id="username" name="username" class="form-control"/> <br/>
+	        
+	        <p>Senha<p>
+	        <input type="password" id="password" name="password" class="form-control"/> <br/>
 	
 	        <div align="center" th:if="${param.error}">
-	            <p style="font-size: 20; color: #FF1C19;">Username or Password invalid, please verify</p>
+	            <p style="font-size: 20; color: #FF1C19;">Username ou Senha inválidos, por favor verificar.</p>
 	        </div>
 	        <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit"
 	                th:text="Login"></button>

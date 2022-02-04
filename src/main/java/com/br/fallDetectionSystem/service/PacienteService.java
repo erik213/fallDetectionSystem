@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.br.fallDetectionSystem.model.Cuidador;
 import com.br.fallDetectionSystem.model.Paciente;
 import com.br.fallDetectionSystem.model.PacienteCuidador;
-import com.br.fallDetectionSystem.model.PacienteCuidadorId;
 import com.br.fallDetectionSystem.repository.CuidadorRepository;
 import com.br.fallDetectionSystem.repository.PacienteCuidadorRepository;
 import com.br.fallDetectionSystem.repository.PacienteRepository;
@@ -44,8 +43,8 @@ public class PacienteService {
     
     public void associatePacienteCuidador(Paciente paciente, String username) {
     	Cuidador cuidador = cuidadorRepository.findByUsername(username);	
-	    Long cuidador_id = (long) cuidador.getId_cuidador();
-	    Long paciente_id = (long) paciente.getId_paciente();   	
-    	pacienteCuidadorRepository.save(new PacienteCuidador(new PacienteCuidadorId(paciente_id, cuidador_id)));
+	    int cuidador_id = cuidador.getId_cuidador();
+	    int paciente_id = paciente.getId_paciente();   	
+    	pacienteCuidadorRepository.save(new PacienteCuidador(paciente_id, cuidador_id));
     }
 }
