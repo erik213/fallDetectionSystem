@@ -1,6 +1,6 @@
 package com.br.fallDetectionSystem.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,6 +23,6 @@ public class EventoQueda {
 	private int id_camera;
 	
 	@Column(name="data_hora")
-	private Date data_hora;
+	private LocalDateTime data_hora;
 	
 }

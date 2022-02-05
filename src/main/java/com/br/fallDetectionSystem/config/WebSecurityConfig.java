@@ -56,6 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/", "/home").permitAll()
         .antMatchers("/login").permitAll()
         .antMatchers("/registration").permitAll()
+        .antMatchers("/new-event").permitAll()
         .anyRequest().authenticated().and().csrf().disable()
         //To use Spring Security default login page leave loginPage() empty
         .formLogin()
