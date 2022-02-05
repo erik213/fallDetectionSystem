@@ -40,8 +40,7 @@ public class PatientAssociationController {
     @RequestMapping(value = "/associate-patient", method = RequestMethod.POST)
     public ModelAndView createPatient(PacienteCuidador id, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
-        
-        Paciente paciente = pacienteRepository.findById(id.getId_paciente());
+        Paciente paciente = pacienteRepository.findById(id.getPaciente().getId_paciente());
         
         if(paciente == null) {
         	modelAndView.addObject("warningMessage", "Patient not found");

@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.br.fallDetectionSystem.model.Cuidador;
 import com.br.fallDetectionSystem.model.PacienteCuidador;
 import com.br.fallDetectionSystem.repository.CuidadorRepository;
-import com.br.fallDetectionSystem.repository.PacienteRepository;
 import com.br.fallDetectionSystem.service.PacienteCuidadorService;
 
 @Controller
@@ -25,17 +24,14 @@ public class MyPatientsController {
 	@Autowired
 	private CuidadorRepository cuidadorRepository;
 	
-	@Autowired
-	private PacienteRepository pacienteRepository;
-	
 	@RequestMapping(value="/my-patients", method=RequestMethod.GET)
 	public ModelAndView myPatients() {
 		ModelAndView modelAndView = new ModelAndView();
 		List <PacienteCuidador> pacienteCuidadorList = pacienteCuidadorService.findPacienteCuidador(getCurrentCuidadorId());
-		for (PacienteCuidador pacienteCuidador : pacienteCuidadorList) {
-			pacienteCuidador.setNomePaciente(pacienteRepository.findById(pacienteCuidador.getId_paciente()).getNome());
-			pacienteCuidador.setNomeCuidador(cuidadorRepository.findById(getCurrentCuidadorId()).getNome());
-		}
+//		for (PacienteCuidador pacienteCuidador : pacienteCuidadorList) {
+//			pacienteCuidador.setNomePaciente(pacienteRepository.findById(pacienteCuidador.getId_paciente()).getNome());
+//			pacienteCuidador.setNomeCuidador(cuidadorRepository.findById(getCurrentCuidadorId()).getNome());
+//		}
 		//modelAndView.addObject("pacienteCuidador", pacienteCuidadorService.findPacienteCuidador(getCurrentCuidadorId()));
 		modelAndView.addObject("pacienteCuidador", pacienteCuidadorList);
 		modelAndView.setViewName("my-patients");

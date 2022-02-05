@@ -17,7 +17,7 @@ import lombok.Data;
 public class Cuidador {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)	
 	@Column(name = "id_cuidador")
 	private int id_cuidador;
 	

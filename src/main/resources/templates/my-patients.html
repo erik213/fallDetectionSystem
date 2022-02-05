@@ -22,7 +22,8 @@
 			    	<td colspan="2"> Nenhum paciente cadastrado </td>
 			    </tr>
 			    <tr th:each="paciente : ${pacienteCuidador}">
-			    	<td><span th:text="${paciente.id_paciente}"> id_paciente </span></td>
+			    	<td><span th:text="${paciente.paciente.id_paciente}"> id_paciente </span></td>
+			    	<td><span th:text="${paciente.paciente.nome}"> id_paciente </span></td>
 			    </tr>
 			</tbody>
 		</table>

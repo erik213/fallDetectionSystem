@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -21,40 +21,29 @@ public class PacienteCuidador{
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="id_paciente")
-	private int id_paciente;
+	@ManyToOne
+	@JoinColumn(name = "paciente_id", referencedColumnName="id_paciente")
+	private Paciente paciente;
 	
-	@Column(name="id_cuidador")
-	private int id_cuidador;
-	
-	@OneToOne
-	@JoinColumn(name = "nomePaciente", referencedColumnName = "nome_paciente")
-	private String nomePaciente;
-	
-	@OneToOne
-	@JoinColumn(name = "nomeCuidador", referencedColumnName = "nome_cuidador")
-	private String nomeCuidador;
+	@ManyToOne
+	@JoinColumn(name = "cuidador_id", referencedColumnName="id_cuidador")
+	private Cuidador cuidador;
 	
 	public PacienteCuidador() {}
 	
 	public PacienteCuidador(int id_paciente, int id_cuidador) {
-		this.id_paciente = id_paciente;
-		this.id_cuidador = id_cuidador;
+		this.paciente = new Paciente();
+		this.cuidador = new Cuidador();
+		this.paciente.setId_paciente(id_paciente);
+		this.cuidador.setId_cuidador(id_cuidador);;
 	}
 	
-	public void setNomePaciente(String nomePaciente) {
-		this.nomePaciente = nomePaciente;
+	public Paciente getPaciente() {
+		return this.paciente;	
 	}
 	
-	public void setNomeCuidador(String nomeCuidador) {
-		this.nomePaciente = nomeCuidador;
+	public Cuidador getCuidador() {
+		return this.cuidador;	
 	}
 	
-	public String getNomePaciente() {
-		return this.nomePaciente;
-	}
-	
-	public String getetNomeCuidador() {
-		return this.nomePaciente = nomeCuidador;
-	}
 }

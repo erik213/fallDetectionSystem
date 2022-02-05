@@ -9,7 +9,7 @@ import com.br.fallDetectionSystem.model.PacienteCuidador;
 
 public interface PacienteCuidadorRepository extends CrudRepository<PacienteCuidador, Integer>{
 
-	@Query(value="select id, id_paciente, id_cuidador from paciente_cuidador where id_cuidador = ?1", nativeQuery = true)
-	public List <PacienteCuidador> findPacienteByCuidadorId(int id_cuidador);
+	@Query(value="select id, paciente_id, cuidador_id from paciente_cuidador where cuidador_id = ?1", nativeQuery = true)
+	public List <PacienteCuidador> findPacienteByCuidadorId(int cuidador_id);
 	
 }

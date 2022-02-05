@@ -21,14 +21,13 @@
 		                <p>Identificador do paciente<p>
 		                <div class="form-group">
 		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{id_paciente}" class="form-control"/>
+		                        <input type="text" th:field="*{paciente.id_paciente}" class="form-control"/>
 		                    </div>
 		                </div>
 		                
-		                <p>Identificador do cuidador<p>
 		                <div class="form-group">
 		                    <div class="col-sm-9">
-		                        <input type="text" th:value="${id_cuidador}" class="form-control" readonly/>
+		                        <input type="hidden" th:value="${cuidador}" class="form-control" readonly/>
 		                    </div>
 		                </div>
 		
