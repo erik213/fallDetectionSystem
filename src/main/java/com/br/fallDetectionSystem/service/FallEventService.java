@@ -14,6 +14,9 @@ public class FallEventService {
 	@Autowired
 	private EventoQuedaRepository eventoQuedaRepository;
 	
+	@Autowired
+	private NotificacaoService notificacaoService;
+	
 	public MessageResponse registerEvent(FallEventRequest eventRequest) {
 		EventoQueda novoEventoQueda = new EventoQueda();
 		MessageResponse messageResponse = new MessageResponse();	
@@ -22,6 +25,8 @@ public class FallEventService {
 			novoEventoQueda.setData_hora(eventRequest.getData_hora());
 			eventoQuedaRepository.save(novoEventoQueda);
 			messageResponse.setMessage("Event registred successfully");
+			
+			notificacaoService.sendNotification(novoEventoQueda);
 		} catch (Exception ex){
 			messageResponse.setMessage("Failed to register event");
 		}

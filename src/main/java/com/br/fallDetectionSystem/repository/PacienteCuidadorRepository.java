@@ -12,4 +12,7 @@ public interface PacienteCuidadorRepository extends CrudRepository<PacienteCuida
 	@Query(value="select id, paciente_id, cuidador_id from paciente_cuidador where cuidador_id = ?1", nativeQuery = true)
 	public List <PacienteCuidador> findPacienteByCuidadorId(int cuidador_id);
 	
+	@Query(value="select id, paciente_id, cuidador_id from paciente_cuidador where paciente_id = ?1", nativeQuery = true)
+	public List <PacienteCuidador> findCuidadorByPacienteId(int paciente_id);
+	
 }

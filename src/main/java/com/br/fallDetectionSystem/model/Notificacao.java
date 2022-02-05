@@ -1,6 +1,6 @@
 package com.br.fallDetectionSystem.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,7 +28,7 @@ public class Notificacao {
 	private int id_cuidador;
 	
 	@Column(name="data_hora")
-	private Date data_hora;
+	private LocalDateTime data_hora;
 	
 	@Column(name="status")
 	private String status;
