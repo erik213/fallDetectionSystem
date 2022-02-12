@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -21,8 +23,9 @@ public class Camera {
 	@Column(name="id_camera")
 	private Integer id_camera;
 	
-	@Column(name="id_paciente")
-	private Integer id_paciente;
+	@ManyToOne
+	@JoinColumn(name = "paciente_id", referencedColumnName="id_paciente")
+	private Paciente paciente;
 	
 	@Column(name="localizacao_camera")
 	private String localizacao_camera;
@@ -32,4 +35,17 @@ public class Camera {
 	
 	@Column(name="last_online_status")
 	private Date last_online_status;
+	
+	public Camera() {
+		
+	}
+	
+	public Camera(int id_paciente) {
+		this.paciente = new Paciente();
+		this.paciente.setId_paciente(id_paciente);
+	}
+	
+	public Paciente getPaciente() {
+		return this.paciente;
+	}
 }

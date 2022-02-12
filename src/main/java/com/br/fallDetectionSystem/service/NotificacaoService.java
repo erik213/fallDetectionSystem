@@ -39,7 +39,7 @@ public class NotificacaoService {
 	
 	public void sendNotification(EventoQueda event) {
 		
-		Camera camera = cameraRepository.findById(event.getId_camera());
+		Camera camera = cameraRepository.findById(event.getCamera().getId_camera()).get();
 		
 		Paciente paciente = getPacienteFromCameraId(camera);
 		
@@ -74,7 +74,7 @@ public class NotificacaoService {
 	}
 	
 	public Paciente getPacienteFromCameraId(Camera camera) {
-		Paciente paciente = pacienteRepository.findById(camera.getId_paciente()).get();
+		Paciente paciente = pacienteRepository.findById(camera.getPaciente().getId_paciente());
 		return paciente;
 	}
 	

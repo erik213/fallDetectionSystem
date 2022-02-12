@@ -9,30 +9,24 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	    <link th:href="@{/css/my-patients.css}" rel="stylesheet" />
-<!-- 	    <script type="text/javascript" th:src="@{/js/my-patients.js}"></script> -->
 	</head>
 	<body>
 		<table class="table table-bordered table-striped">
 	    	<thead>
 				<tr>
-			    	<th> Id Paciente </th>
-			        <th> Nome Paciente </th>
-			        <th> Histórico de Quedas </th>
+			        <th> ID </th>
+			        <th> Camera </th>
+			        <th> Data e Hora</th>
 			    </tr>
 			</thead>
 			<tbody>
-				<tr th:if="${pacienteCuidador.empty}">
-			    	<td colspan="2"> Nenhum paciente cadastrado </td>
+				<tr th:if="${eventoQueda.empty}">
+			    	<td colspan="2"> Nenhuma queda registrada </td>
 			    </tr>
-			    <tr th:each="paciente : ${pacienteCuidador}">
-			    	<td><span th:text="${paciente.paciente.id_paciente}"></span></td>
-			    	<td><span th:text="${paciente.paciente.nome}"></span></td>
-			    	<td>
-				    	<form method="GET" th:action="@{/get-patient-history}">
-				    		<input type="hidden" name="id_paciente" id="id_paciente" th:value="${paciente.paciente.id_paciente}"/>
-						    <button type="submit" name="submit" value="value" class="link-button">Acessar histórico</button>
-						</form>
-					</td> 
+			    <tr th:each="queda : ${eventoQueda}">
+			   		<td><span th:text="${queda.id_evento_queda}"></span></td>
+			   		<td><span th:text="${queda.camera.localizacao_camera}"></span></td>
+			    	<td><span th:text="${queda.data_hora}"></span></td>
 			    </tr>
 			</tbody>
 		</table>

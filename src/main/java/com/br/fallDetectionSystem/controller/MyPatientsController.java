@@ -28,11 +28,6 @@ public class MyPatientsController {
 	public ModelAndView myPatients() {
 		ModelAndView modelAndView = new ModelAndView();
 		List <PacienteCuidador> pacienteCuidadorList = pacienteCuidadorService.findPacienteCuidador(getCurrentCuidadorId());
-//		for (PacienteCuidador pacienteCuidador : pacienteCuidadorList) {
-//			pacienteCuidador.setNomePaciente(pacienteRepository.findById(pacienteCuidador.getId_paciente()).getNome());
-//			pacienteCuidador.setNomeCuidador(cuidadorRepository.findById(getCurrentCuidadorId()).getNome());
-//		}
-		//modelAndView.addObject("pacienteCuidador", pacienteCuidadorService.findPacienteCuidador(getCurrentCuidadorId()));
 		modelAndView.addObject("pacienteCuidador", pacienteCuidadorList);
 		modelAndView.setViewName("my-patients");
 		return modelAndView;
