@@ -1,8 +1,14 @@
 body {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  color: #37559d;
+  flex-direction: column;
+  color: #b5c0da;
+}
+
+#body-pacient, #body-history{
+  background: linear-gradient(135deg, #ffffff, #d9e6f8);
+  background-color: #fcfcfc;
+  padding-bottom: 250px;
 }
 
 a {
@@ -24,3 +30,18 @@ td {
   position: relative;
   padding: 18px;
 }
+
+.div-goback{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+#table-pacient, #table-history{
+  margin: 20px 5px;
+}
+
+#table-pacient_wrapper{
+  width: 100%;
+}
+

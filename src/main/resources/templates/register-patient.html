@@ -5,71 +5,72 @@
 		<meta charset="UTF-8">
 		<title>Fall Detection System</title>
 		<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/register.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/form-default.css}"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
-	<body>
-		
-		<div class="container">
-		    <div class="row">
-		        <div class="col-md-6 col-md-offset-3">
-		            <form autocomplete="off" action="#" th:action="@{/register-patient}"
-		                  th:object="${paciente}" method="post" class="form-horizontal"
-		                  role="form">
-		                <h2>Cadastrar paciente</h2>
-		                
-		                <p>Nome<p>
-		                <div class="form-group">
-		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{nome}" class="form-control"/>
-		                    </div>
-		                </div>
-		                
-		                <p>Aniversário<p>
-		                <div class="form-group">
-		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{aniversario}" class="form-control"/>
-		                    </div>
-		                </div>
-		                
-		                <p>Gênero<p>
-		                <div class="form-group">
-		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{genero}" class="form-control"/>
-		                    </div>
-		                </div>
-		                
-		                <p>Endereço<p>
-		                <div class="form-group">
-		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{endereco}" class="form-control"/> 
-		                    </div>
-		                </div>
-		                
-		                <p>Telefone<p>
-		                <div class="form-group">
-		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{telefone}" class="form-control"/> 
-		                    </div>
-		                </div>
+	<body id="body-register">
+		<div class="nav-header">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+				<a class="navbar-brand" th:href="@{/home-logged}">
+					<img id="img-logo" th:src="@{/img/health-icon.png}" alt="health" width="30" height="30">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link">Registrar paciente <span class="sr-only">(Página atual)</span></a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div id="container-register" class="container fadeInDown">
+				<form id="register-form" autocomplete="off" action="#" th:action="@{/register-patient}"
+							th:object="${paciente}" method="post" class="form-signin"
+							role="form">
+						<h2 class="form-reg-title">Cadastrar Paciente</h2>
 						
-		                <div class="form-group">
-		                    <div class="col-sm-9">
-		                        <button type="submit" class="btn btn-primary btn-block">Cadastrar paciente</button>
-		                    </div>
-		                </div>
-		
-		                <h2><span class="text-success" th:utext="${successMessage}"></span></h2>
-		
-		            </form>
-		            
-		            <form>
-						 <input type="button" value="Voltar" onclick="history.back()">
-					</form>
-					
-		        </div>
-		    </div>
+						<div>
+							<p>Nome</p>
+							<div class="form-group">
+								<input required type="text" th:field="*{nome}" class="form-control"/>
+							</div>
+							
+							<p>Aniversário</p>
+							<div class="form-group">
+								<input type="text" required th:field="*{aniversario}" class="form-control" placeholder="dd/mm/aa"/>
+							</div>
+							
+							<p>Gênero</p>
+							<div class="form-group">
+								<input required type="text" th:field="*{genero}" class="form-control" />
+							</div>
+							
+							<p>Endereço</p>
+							<div class="form-group">
+								<input required type="text" th:field="*{endereco}" class="form-control"/> 
+							</div>
+							
+							<p>Telefone</p>
+							<div class="form-group">
+								<input required type="text" th:field="*{telefone}" class="form-control"/> 
+							</div>
+						</div>
+						<h2 style="font-size: 20px;"><span id="text-success" th:utext="${successMessage}"></span></h2>
+						<div id="btn-register" class="form-group">
+							<button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+							<form>
+								<input id="btn-goback" class="btn btn-primary btn-block" type="button" value="Voltar" onclick="history.back()">
+							</form>
+						</div>
+				</form>
+			</div>	
 		</div>	
 	</body>
 </html>

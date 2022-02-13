@@ -1,0 +1,17 @@
+.form-reg-title{
+  padding:20px;
+}
+
+#btn-register{
+  margin-top: 20px;
+}
+
+#btn-goback{
+  margin-bottom: 50px;
+  background-color: #8a9baa;
+  border-color: #9cbdda;
+}
+
+#btn-goback:hover {
+  background-color: #748594;
+}

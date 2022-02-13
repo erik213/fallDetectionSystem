@@ -5,50 +5,55 @@
 		<meta charset="UTF-8">
 		<title>Fall Detection System</title>
 		<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/associate-pacient.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/form-default.css}"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
-	<body>
-		
-		<div class="container">
-		    <div class="row">
-		        <div class="col-md-6 col-md-offset-3">
-		            <form autocomplete="off" action="#" th:action="@{/associate-patient}"
-		                  th:object="${pacienteCuidador}" method="post" class="form-horizontal" role="form">
-		                <h2>Associar a paciente</h2>
-		                
-		                <p>Identificador do paciente<p>
-		                <div class="form-group">
-		                    <div class="col-sm-9">
-		                        <input type="text" th:field="*{paciente.id_paciente}" class="form-control"/>
-		                    </div>
-		                </div>
-		                
-		                <div class="form-group">
-		                    <div class="col-sm-9">
-		                        <input type="hidden" th:value="${cuidador}" class="form-control" readonly/>
-		                    </div>
-		                </div>
-		
-		                
-		                <div class="form-group">
-		                    <div class="col-sm-9">
-		                        <button type="submit" class="btn btn-primary btn-block">Associar</button>
-		                    </div>
-		                </div>
-		
-		                <h2><span class="text-success" th:utext="${successMessage}"></span></h2>
-		                <h2><span class="text-warning" th:utext="${warningMessage}"></span></h2>
-		
-		            </form>
-		            
-		            <form>
-						 <input type="button" value="Voltar" onclick="history.back()">
-					</form>
-					
-		        </div>
-		    </div>
-		</div>	
+	<body id="body-register">
+		<div class="nav-header">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+				<a class="navbar-brand" th:href="@{/home-logged}">
+					<img id="img-logo" th:src="@{/img/health-icon.png}" alt="health" width="30" height="30">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" >Cadastro paciente <span class="sr-only">(Página atual)</span></a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div id="container-associate" class="container">
+						<form id="register-form" autocomplete="off" action="#" th:action="@{/associate-patient}"
+									th:object="${pacienteCuidador}" method="post" class="form-signin" role="form">
+								<h2 class="form-reg-title">Associar a paciente</h2>
+								
+								<p>Identificador do paciente</p>
+								<div class="form-group">
+									<input type="text" th:field="*{paciente.id_paciente}" class="form-control"/>
+								</div>
+								
+								<div class="form-group">
+									<input type="hidden" th:value="${cuidador}" class="form-control" readonly/>
+								</div>
+
+								<h2 style="font-size: 20px;"><span class="text-success" th:utext="${successMessage}"></span></h2>
+								<h2><span class="text-warning" th:utext="${warningMessage}"></span></h2>
+
+								<div id="form-button" class="form-group">
+									<button style="margin-right:20px;" type="submit" class="btn btn-primary btn-block">Associar</button>
+									<form>
+										<input style="margin: 0px 0px 50px; width: 110px;" id="btn-goback" class="btn btn-primary btn-block" type="button" value="Voltar" onclick="history.back()">
+									</form>
+								</div>
+						</form>
+		</div>
+
 	</body>
 </html>

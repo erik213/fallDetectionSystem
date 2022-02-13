@@ -1,0 +1,65 @@
+
+#home-bckgrnd{
+  background: linear-gradient(135deg, #172a74, #21a9af);
+  background-color: #184e8e;
+  padding-bottom: 500px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#btn-home{
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:10px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  color: rgb(235, 239, 241);
+  box-shadow: none;
+  text-shadow: none;
+  padding: 6px 15px;
+  background: transparent;
+  transition: background-color 0.25s ease 0s;
+  outline: none;
+}
+
+#btn-home:hover{
+  box-shadow: 0 7px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.div-home-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.hero{
+  margin-top:80px;
+  text-align: center;
+}
+
+#title-home{
+  font-weight: bold;
+  font-size: 60px;
+  color: #7dc0cf;
+}
+
+#home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#home-subtitle{
+  color: #c9d0d7;
+  font-size: 30px;
+}
+
+.sub-ama{
+  font-size:400;
+  color: #8a25a0;
+}
+
+#nav-div{
+  background:transparent;  
+}
