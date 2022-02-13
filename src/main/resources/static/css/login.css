@@ -1,0 +1,101 @@
+#text-center{
+  background: linear-gradient(135deg, #172a74, #21a9af);
+  background-color: #184e8e;
+  padding-bottom: 100px;
+}
+
+.btn-block{
+  width: 100px;
+  height: 40px;
+}
+
+#btn-login, #btn-register{
+  width: 150px;
+}
+
+.container{
+  width: 50%;
+  padding-top: 100px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-control {
+    width: 280px;
+}
+
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+#form-welcome{
+  background: #90c4e1;
+  padding: 20px
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+#username, #password {
+  display: flex;
+  align-self: center;
+  width: 300px;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  margin-top: 80px;
+}

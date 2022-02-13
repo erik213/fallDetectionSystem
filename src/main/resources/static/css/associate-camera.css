@@ -1,0 +1,60 @@
+
+#body-register{
+
+  background: linear-gradient(135deg, #d3daf8, #8acfd3);
+  background-color: #649adb;
+  padding-bottom: 250px;
+
+}
+
+#container-associate{
+  padding-top: 50px;
+  margin-bottom: 100px;
+}
+
+#id-paciente, #id-camera{
+  width: 700px;
+}
+
+.btn-block-associate{
+  width:120px;
+  margin:10px;
+}
+
+#text-success{
+  font-size: 20px;
+}
+
+#btn-goback-associate{
+  background-color: #8a9baa;
+  border-color: #9cbdda;
+}
+
+#btn-goback-associate:hover {
+  background-color: #748594;
+}
+
+#div-jumbotron{
+
+  background: linear-gradient(135deg, #d3daf8, #aae3e5);
+  background-color: #649adb;
+  padding-bottom: 250px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+#form-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.div-img{
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
+}
