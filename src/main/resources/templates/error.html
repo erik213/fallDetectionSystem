@@ -2,15 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="ISO-8859-1">
-	    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <link rel="stylesheet" type="text/css" th:href="@{/css/error.css}"/>
+			<link rel="stylesheet" type="text/css" th:href="@{/css/register.css}"/>
+			<link rel="stylesheet" type="text/css" th:href="@{/css/form-default.css}"/>
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
-	<body>
-		<h1>Something went wrong! </h1>
-		<form>
-			<input type="button" value="Voltar" onclick="history.back()">
-		</form>
+	<body id="body-error">
+		<div id="container-error" class="container">
+			<h1>Ops!</h1>
+			<h2 style="margin-bottom: 50px;">Alguma coisa deu errado. </h2>
+			<form>
+				<input id="btn-goback" class="btn btn-primary btn-block" type="button" value="Voltar" onclick="history.back()">
+			</form>
+		</div>
 	</body>
 </html>

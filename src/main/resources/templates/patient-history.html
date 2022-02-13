@@ -5,14 +5,41 @@
 		<meta charset="UTF-8">
 		<title>Fall Detection System</title>
 		<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	    <link th:href="@{/css/my-patients.css}" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/form-default.css}"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="@{/css/datatable.css}">
+		<link th:href="@{/css/my-patients.css}" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('#table-history').DataTable();
+				$('.dataTables_length').addClass('bs-select');
+			});
+		</script>
 	</head>
-	<body>
-		<table class="table table-bordered table-striped">
-	    	<thead>
+	<body id="body-history">
+		<div class="nav-header">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+				<a class="navbar-brand" th:href="@{/home-logged}">
+					<img id="img-logo" th:src="@{/img/health-icon.png}" alt="health" width="30" height="30">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link">Histórico <span class="sr-only">(Página atual)</span></a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="container">
+			<table id="table-history" class="table table-bordered table-striped">
+	    	<thead class="thead-dark">
 				<tr>
 			        <th> ID </th>
 			        <th> Camera </th>
@@ -30,8 +57,11 @@
 			    </tr>
 			</tbody>
 		</table>
-		<form>
-			<input type="button" value="Voltar" onclick="history.back()">
-		</form>
+		<div class="div-goback">
+			<form>
+				<input style="margin: 0px 0px 50px; width: 110px;" id="btn-goback" class="btn btn-primary btn-block" type="button" value="Voltar" onclick="history.back()">
+			</form>		
+		</div>
+		</div>
 	</body>
 </html>

@@ -4,15 +4,33 @@
 		<meta charset="UTF-8">
 		<title>Fall Detection System</title>
 		<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/home-default.css}"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
-	<body>
-		<h1>Fall Detection System</h1>
-		
-		<a href="/login">Fazer login</a> <br>
-		<a href="/registration">Registre-se</a>
-		
+	<body id="home-bckgrnd"	>
+		<div class="nav-header">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+				<a class="navbar-brand" th:href="@{/home-logged}">
+					<img id="img-logo" th:src="@{/img/health-icon.png}" alt="health" width="30" height="30">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</nav>
+		</div>
+		<div class="hero">
+			<h1 id="title-home">Fall Detection System</h1>
+			<hr>
+			<p id="home-subtitle" class="lead">Cuidando de quem você AMA!</p>
+
+			<br><br>
+			<div class="div-home-btn">
+				<a id="btn-home" class="btn btn-default btn-lg action-button" href="/login">Fazer login</a>
+				<a id="btn-home" class="btn btn-default btn-lg action-button" href="/registration">Registre-se</a>
+			</div>
+
+		</div>
 	</body>
 </html>

@@ -8,28 +8,28 @@
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	
-	<body>
-	<form th:action="@{/registration}" method="get">
-	    <button class="btn btn-md btn-warning btn-block" type="Submit">Registre-se</button>
-	</form>
-	
-	<div class="container">
-	    <form th:action="@{/login}" method="POST" class="form-signin">
-	        <h3 class="form-signin-heading" th:text="Welcome"></h3>
-	        <br/>
-	
-			<p>Username<p>
-	        <input type="text" id="username" name="username" class="form-control"/> <br/>
-	        
-	        <p>Senha<p>
-	        <input type="password" id="password" name="password" class="form-control"/> <br/>
-	
-	        <div align="center" th:if="${param.error}">
-	            <p style="font-size: 20; color: #FF1C19;">Username ou Senha inválidos, por favor verificar.</p>
-	        </div>
-	        <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit"
-	                th:text="Login"></button>
-	    </form>
-	</div>
+	<body id="text-center">
+		<div class="wrapper fadeInDown">
+
+				<form id="form-welcome" th:action="@{/login}" method="POST" class="form-signin">
+						<img th:src="@{/img/health-icon.png}" alt="health" class="mb-4" width="72" height="72">
+						<h1 class="h3 mb-3 font-weight-normal">Por favor, faça o login</h1>
+						<h3 class="form-signin-heading" th:text="Welcome"></h3>
+						<br/>
+		
+						<input type="text" id="username" name="username" class="form-control" placeholder="Username" width="300px"/> <br/>
+						<input type="password" id="password" name="password" class="form-control" placeholder="Password" width="300px"/> <br/>
+		
+						<div align="center" th:if="${param.error}">
+								<p style="font-size: 20; color: #FF1C19;">Username ou Senha inválidos, por favor verificar.</p>
+						</div>
+						<button id="btn-login" class="btn btn-lg btn-primary btn-block" name="Submit" th:value="Login" type="Submit"
+										th:text="Login">Login</button>
+						<form th:action="@{/registration}" method="get">
+								<button id="btn-register" class="btn btn-md btn-warning btn-block" type="Submit" width="100px" height="40px">Registre-se</button>
+						</form>
+				</form>
+
+		</div>
 	</body>
 </html>
