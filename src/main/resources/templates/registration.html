@@ -4,72 +4,71 @@
 <head>
     <title>Formulário de Registro</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body id="text-center">
     <div class="wrapper fadeInDown">
+        <div class="div-forms-login">
             <form id="form-welcome" autocomplete="off" action="#" th:action="@{/registration}"
                   th:object="${cuidador}" method="post" class="form-horizontal"
                   role="form">
-                <h2>Registre-se</h2>
+                <h2 style="margin-bottom: 50px;">Registre-se</h2>
                 
-                <p>Nome completo<p>
+                <p style="margin-bottom: 0px;">Nome completo<p>
                 <div class="form-group">
 
-                        <input type="text" th:field="*{nome}" class="form-control"/>
+                        <input style="width: 300px;" type="text" th:field="*{nome}" class="form-control"/>
                         <label th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="validation-message"></label>
 
                 </div>
 
-				<p>Email<p>
+				<p style="margin-bottom: 0px;">Email<p>
                 <div class="form-group">
-                        <input type="text" th:field="*{email}" class="form-control"/> 
+                        <input style="width: 300px;" type="text" th:field="*{email}" class="form-control"/> 
                         <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="validation-message"></label>
                 </div>
                 
-                <p>Telefone<p>
+                <p style="margin-bottom: 0px;">Telefone<p>
                 <div class="form-group">
-                        <input type="text" th:field="*{telefone}" class="form-control"/> 
+                        <input style="width: 300px;" type="text" th:field="*{telefone}" class="form-control"/> 
                         <label th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}" class="validation-message"></label>
                 </div>
                 
-                <p>Endereço<p>
+                <p style="margin-bottom: 0px;">Endereço<p>
                 <div class="form-group">
 
-                        <input type="text" th:field="*{endereco}" class="form-control"/> 
+                        <input style="width: 300px;" type="text" th:field="*{endereco}" class="form-control"/> 
                         <label th:if="${#fields.hasErrors('endereco')}" th:errors="*{endereco}" class="validation-message"></label>
 
                 </div>
                 
-                <p>Username<p>
+                <p style="margin-bottom: 0px;">Username<p>
                 <div class="form-group">
 
-                        <input type="text" th:field="*{username}" class="form-control"/> 
+                        <input style="width: 300px;" type="text" th:field="*{username}" class="form-control"/> 
                         <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="validation-message"></label>
 
                 </div>
                 
-                <p>Senha<p>
+                <p style="margin-bottom: 0px;">Senha<p>
                 <div class="form-group">
 
-                        <input type="password" th:field="*{password}" class="form-control"/> 
+                        <input style="width: 300px;" type="password" th:field="*{password}" class="form-control"/> 
                         <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="validation-message"></label>
 
                 </div>
                 <h2 style="font-size: 20px;"><span class="text-success" th:utext="${successMessage}"></span></h2>
-                <div class="form-group">
-
-                    <button type="submit" class="btn btn-primary btn-block">Registrar</button>
-
+                <div style="margin-bottom:0px;" class="form-group">
+                    <button style="width:100px;" type="submit" class="btn btn-primary btn-block">Registrar</button>
                 </div>
-                <form th:action="@{/login}" method="get">
-                    <button class="btn btn-md btn-warning btn-block" type="Submit">Fazer Login</button>
-                </form>
-
-
             </form>
+            <form th:action="@{/login}" method="get">
+                <button class="btn btn-md btn-warning btn-block" type="Submit">Fazer Login</button>
+            </form>            
+            </div>
         </div>
     </div>
 </div>
